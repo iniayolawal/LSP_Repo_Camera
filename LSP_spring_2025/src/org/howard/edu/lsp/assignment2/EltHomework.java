@@ -16,29 +16,35 @@ public class EltHomework {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		System.out.println("Current directory: " + new File(".").getAbsolutePath());
 		String inputFilepath = "data/products.csv";
-		String outputFilepath = "data/tranformed_products.csv";
+		String outputFilepath = "data/transformed_products.csv";
 		
 		ArrayList<String[]> transformedData = new ArrayList<>();
 		try {
-			BufferedReader br = new BufferedReader(new FileReader(inputFilepath));
+			BufferedReader br = new BufferedReader(new FileReader(inputFilepath)); // i found to use "Buffered Reader" to read and write list from https://www.geeksforgeeks.org/different-ways-reading-text-file-java/# and adjusted as was necessary 
 			String line;
 			boolean isHeader = true;
 			
 			while ((line = br.readLine()) != null) {
+				line = line.trim(); // Remove spaces and newlines
+                if (line.isEmpty()) { 
+                    continue; // Skip empty lines
+                }
 				if(isHeader) {
 					transformedData.add(new String[]{"ProductID", "Name", "Price", "Category", "PriceRange"});
 					isHeader = false;
 					continue;
 					
 				}
-				String[] values = line.split(","); //you mentioned line split in class aand i did more research on it https://www.geeksforgeeks.org/split-string-java-examples/
+				//System.out.println("line 40");
+				String[] values = line.split(","); //you mentioned line split in class and i did more research on it https://www.geeksforgeeks.org/split-string-java-examples/
 				transformedData.add(transform(values));
 			}
 			br.close();
-			
+			//System.out.println("line 40");
 			saveToFile(outputFilepath, transformedData); 
-			//System.out.println("ETL process completed. Output saved to " + outputFilepath);
+			System.out.println("ETL process completed. Output saved to " + outputFilepath); // https://www.geeksforgeeks.org/system-out-println-in-java/#
 		
 		}catch (Exception e) {
             System.out.println("Error: Could not read file. Make sure it exists in the 'data' folder.");
