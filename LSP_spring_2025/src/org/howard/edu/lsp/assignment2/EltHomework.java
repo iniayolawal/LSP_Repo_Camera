@@ -17,29 +17,29 @@ public class EltHomework {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("Current directory: " + new File(".").getAbsolutePath());
-		String inputFilepath = "data/products.csv";
-		String outputFilepath = "data/transformed_products.csv";
+		String inputFilepath = "data/products.csv"; //input file
+		String outputFilepath = "data/transformed_products.csv"; //output file
 		
-		ArrayList<String[]> transformedData = new ArrayList<>();
+		ArrayList<String[]> transformedData = new ArrayList<>(); // list to store trnasformed rows https://stackoverflow.com/questions/32940784/what-should-be-imported-to-create-a-list
 		try {
-			BufferedReader br = new BufferedReader(new FileReader(inputFilepath)); // i found to use "Buffered Reader" to read and write list from https://www.geeksforgeeks.org/different-ways-reading-text-file-java/# and adjusted as was necessary 
+			BufferedReader br = new BufferedReader(new FileReader(inputFilepath)); // open file for redaing ; i found to use "Buffered Reader" to read and write list from https://www.geeksforgeeks.org/different-ways-reading-text-file-java/# and adjusted as was necessary 
 			String line;
 			boolean isHeader = true;
 			
-			while ((line = br.readLine()) != null) {
-				line = line.trim(); // Remove spaces and newlines
+			while ((line = br.readLine()) != null) { //  to read each line
+				line = line.trim(); // Remove spaces and newlines https://coderanch.com/t/276221/java/skip-blank-lines-reading-text  https://www.geeksforgeeks.org/java-string-trim-method-example/#
                 if (line.isEmpty()) { 
                     continue; // Skip empty lines
                 }
 				if(isHeader) {
-					transformedData.add(new String[]{"ProductID", "Name", "Price", "Category", "PriceRange"});
-					isHeader = false;
+					transformedData.add(new String[]{"ProductID", "Name", "Price", "Category", "PriceRange"}); //https://stackoverflow.com/questions/30564462/read-data-from-a-text-file-and-create-an-object
+					isHeader = false; // ignore header row
 					continue;
 					
 				}
 				//System.out.println("line 40");
 				String[] values = line.split(","); //you mentioned line split in class and i did more research on it https://www.geeksforgeeks.org/split-string-java-examples/
-				transformedData.add(transform(values));
+				transformedData.add(transform(values)); // transform and store data
 			}
 			br.close();
 			//System.out.println("line 40");
@@ -57,26 +57,27 @@ public class EltHomework {
 		String category = data[3];
 		
 		if (category.equalsIgnoreCase("Electronics")) {
-			price = price * 0.9;
+			price = price * 0.9; // discount on electronics
 		}
 		
 		if (price > 500) {
-			category = "Premium Electronics";
+			category = "Premium Electronics"; //category change if price >500
 		}
 		
-		price = Math.round(price *100.0) / 100.0;
+		price = Math.round(price *100.0) / 100.0; // round to 2 dp
 		
+		//determine price range
 		String priceRange = "Low";
 		if (price > 10 && price <= 100) priceRange = "Medium";
 		if (price > 100 && price <= 500) priceRange = "High";
 		if (price > 500) priceRange = "Premium";
 		
-		return new String[]{productID, name, String.format("%.2f", price),category, priceRange};
+		return new String[]{productID, name, String.format("%.2f", price),category, priceRange};//return transformed data
 	}
 	
 	private static void saveToFile(String filePath, ArrayList<String[]> data) {
 		try {
-			BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+			BufferedWriter writer = new BufferedWriter(new FileWriter(filePath)); //https://www.geeksforgeeks.org/io-bufferedwriter-class-methods-java/
 			for (String[] row : data) {
 				writer.write(String.join(",", row));
 				writer.newLine();
