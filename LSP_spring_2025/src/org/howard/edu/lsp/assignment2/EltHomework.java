@@ -37,17 +37,15 @@ public class EltHomework {
 					continue;
 					
 				}
-				//System.out.println("line 40");
 				String[] values = line.split(","); //you mentioned line split in class and i did more research on it https://www.geeksforgeeks.org/split-string-java-examples/
 				transformedData.add(transform(values)); // transform and store data
 			}
 			br.close();
-			//System.out.println("line 40");
 			saveToFile(outputFilepath, transformedData); 
-			System.out.println("ETL process completed. Output saved to " + outputFilepath); // https://www.geeksforgeeks.org/system-out-println-in-java/#
+			System.out.println("ETL process completed. Output saved to " + outputFilepath); //https://www.geeksforgeeks.org/exceptions-in-java/ // https://www.geeksforgeeks.org/system-out-println-in-java/#
 		
 		}catch (Exception e) {
-            System.out.println("Error: Could not read file. Make sure it exists in the 'data' folder.");
+            System.out.println("Error: Could not read file. Make sure it exists in the 'data' folder.");//error handling
         }
 	}
 	private static String[] transform(String[] data) {
@@ -82,9 +80,9 @@ public class EltHomework {
 				writer.write(String.join(",", row));
 				writer.newLine();
 			}
-		writer.close();
+		writer.close();// close file 
 		}catch (Exception e) {
-            System.out.println("Error: Could not write to the output file.");
+            System.out.println("Error: Could not write to the output file.");// error handling
         }
 		
 	}
