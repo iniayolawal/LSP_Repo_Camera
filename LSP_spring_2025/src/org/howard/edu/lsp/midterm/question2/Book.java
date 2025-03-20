@@ -21,6 +21,31 @@ public class Book {
     }
     
     
+    public String getTitle() {
+        return title;
+    }
+    
+    public String getAuthor() {
+        return author;
+    }
+    
+    public String getISBN() {
+        return ISBN;
+    }
+    public int getYearPublished() {
+        return yearPublished;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true; // Check if comparing to itself
+        if (!(obj instanceof Book)) return false; // Ensure the object is a Book
+        Book other = (Book) obj;
+        return this.ISBN.equals(other.ISBN) && this.author.equals(other.author);
+    }
+
+    
+    
     
     
     
