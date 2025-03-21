@@ -11,6 +11,9 @@ import java.util.List;
  * 
  * 
  * References:
+ * https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-
+ * https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#trim--
+ * https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#length--
  * https://www.w3schools.com/java/java_arraylist.asp
  */
 public class WordProcessor {
