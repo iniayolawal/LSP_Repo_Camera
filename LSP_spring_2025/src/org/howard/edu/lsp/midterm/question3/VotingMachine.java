@@ -11,6 +11,7 @@ import java.util.Map;
  * voting for non-existent candidates.
  * 
  * References:
+ *  Java hash map https://www.geeksforgeeks.org/java-util-hashmap-in-java/
  *  https://docs.oracle.com/javase/tutorial/java/javaOO/classes.html
  *  https://www.baeldung.com/java-equals-hashcode-contracts
  * 

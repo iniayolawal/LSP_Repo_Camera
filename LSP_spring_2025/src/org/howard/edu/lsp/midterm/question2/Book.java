@@ -7,8 +7,8 @@ package org.howard.edu.lsp.midterm.question2;
  *  Overrides the toString() method to return a meaningful book representation.
  *  
  *  References
- *  Overiding toString() https://www.geeksforgeeks.org/overriding-tostring-method-in-java/
- *  Overiding equals() https://www.geeksforgeeks.org/overriding-equals-method-in-java/
+ *  Overriding toString() https://www.geeksforgeeks.org/overriding-tostring-method-in-java/
+ *  Overriding equals() https://www.geeksforgeeks.org/overriding-equals-method-in-java/
  */
 public class Book {
 	private String title;
