@@ -3,7 +3,7 @@ package org.howard.edu.lsp.midterm.question5;
  * Represents an audiobook media type that supports common playback controls
  * and audiobook-specific features like playback speed adjustment.
  */
-public class Audiobook {
+public class Audiobook implements Streamable{
 	 private String title;
 
 	    // Constructor to set movie title

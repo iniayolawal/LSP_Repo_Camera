@@ -3,7 +3,7 @@ package org.howard.edu.lsp.midterm.question5;
  * Represents a movie media type that supports common playback controls
  * and movie-specific features like rewinding.
  */
-public class Movie {
+public class Movie implements Streamable {
 	 private String title;
 
 	    // Constructor to set movie title
@@ -28,6 +28,6 @@ public class Movie {
 	    
 	    // Movie-specific feature: rewind
 	    public void rewind(int seconds) {
-	        System.out.println("Rewinding movie: " + title + " by " + seconds + " seconds");
+	        System.out.println("Rewinding movie: " + title + " by " + seconds + " minutes");
 	    }
 }
