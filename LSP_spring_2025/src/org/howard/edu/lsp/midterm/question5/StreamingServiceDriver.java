@@ -1,7 +1,9 @@
 package org.howard.edu.lsp.midterm.question5;
 /**
- * A driver class to test various media types implementing the Streamable interface.
- * Demonstrates common behaviors (play, pause, stop) and unique features.
+ * This is the test driver for different types of media content. 
+ * It creates objects for music, movies, and audiobooks, 
+ * then tests common playback functions as well as unique features.
+ * 
  */
 public class StreamingServiceDriver {
 

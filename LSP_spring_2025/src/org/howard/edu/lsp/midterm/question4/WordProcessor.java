@@ -5,13 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A utility class that processes a given sentence and returns all the longest words.
- * It handles different spacing between words and ensures accurate word extraction.
+ * This class processes a sentence and finds the longest words in it. 
+ * It makes sure to handle extra spaces between words and works with 
+ * both short and long sentences.
+ * 
  * 
  * References:
- * https://www.geeksforgeeks.org/java-string-split-method/
- * https://www.geeksforgeeks.org/java-util-arraylist-in-java/
- * https://www.w3schools.com/java/ref_string.asp
  * https://www.w3schools.com/java/java_arraylist.asp
  */
 public class WordProcessor {

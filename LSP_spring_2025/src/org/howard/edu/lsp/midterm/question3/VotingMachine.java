@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Represents an electronic voting machine that allows voters to cast votes 
- * for candidates and displays election results.
- * Ensures that votes can only be cast for registered candidates and prevents 
- * voting for non-existent candidates.
+ * This class represents a basic voting machine where people can vote for candidates.
+ * It keeps track of votes, ensures that votes can only be cast for registered candidates, 
+ * prevents voting for non-existent candidates, and determines the winner based on the highest vote count.
+ * 
  * 
  * References:
  *  Java hash map https://www.geeksforgeeks.org/java-util-hashmap-in-java/

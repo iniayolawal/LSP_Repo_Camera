@@ -1,8 +1,8 @@
 package org.howard.edu.lsp.midterm.question2;
 /**
- *  Represents a book in the library.
- *  Each book has a title, an author, a unique ISBN, and a publication year.
- *  Implements encapsulation with private attributes and public getters.
+ *  This class represents a book in the library system. 
+ *  Each book has a title, an author, an ISBN, and a publication year.
+ *  The ISBN is used to uniquely identify a book.
  *  Overrides the equals() method to compare books based on ISBN and author.
  *  Overrides the toString() method to return a meaningful book representation.
  *  
