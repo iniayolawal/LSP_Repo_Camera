@@ -1,5 +1,9 @@
 package org.howard.edu.lsp.midterm.question2;
 
+/**
+ * A driver class to test the Book class functionality.
+ * Demonstrates object creation, equality checking, and string representation.
+ */
 public class BookDriver {
 
 	public static void main(String[] args) {

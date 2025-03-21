@@ -5,6 +5,10 @@ package org.howard.edu.lsp.midterm.question2;
  *  Implements encapsulation with private attributes and public getters.
  *  Overrides the equals() method to compare books based on ISBN and author.
  *  Overrides the toString() method to return a meaningful book representation.
+ *  
+ *  References
+ *  Overiding toString() https://www.geeksforgeeks.org/overriding-tostring-method-in-java/
+ *  Overiding equals() https://www.geeksforgeeks.org/overriding-equals-method-in-java/
  */
 public class Book {
 	private String title;
@@ -53,7 +57,7 @@ public class Book {
     
     // Override equals method to compare books based on ISBN and author
     //
-    @Override // overiding in java https://www.geeksforgeeks.org/overriding-in-java/#
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) return true; // Check if comparing to itself
         if (!(obj instanceof Book)) return false; // Ensure the object is a Book
@@ -63,7 +67,7 @@ public class Book {
     
     
     // Override toString method to provide a readable book description
-    @Override // overiding in java https://www.geeksforgeeks.org/overriding-in-java/#
+    @Override 
     public String toString() {
         return "Title: " + title + ", Author: " + author + ", ISBN: " + ISBN + ", Year Published: " + yearPublished;
     }
