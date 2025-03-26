@@ -4,7 +4,7 @@
 package org.howard.edu.lsp.assignment5;
 
 public class Driver {
-	//Inioluwa Ayo-Lawal
+
     public static void main(String[] args) {
         // Test 1: Creating IntegerSet and testing add(), toString(), length(), and contains().
         System.out.println("Test 1: Testing add(), toString(), length(), contains()");
