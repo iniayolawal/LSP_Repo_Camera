@@ -89,10 +89,10 @@ public class IntegerSet {
      * @return the largest value in the set.
      * @throws IllegalArgumentException if the set is empty.
      */
-	public int largest()  {
-		if (set.isEmpty()) throw new IllegalArgumentException("Set is empty");
-        return set.stream().max(Integer::compareTo).get();
-	}; 
+	public int largest() throws IntegerSetException {
+	    if (set.isEmpty()) throw new IntegerSetException("Set is empty");
+	    return set.stream().max(Integer::compareTo).get();
+	}
 
 	
 	
@@ -104,10 +104,10 @@ public class IntegerSet {
      * @return the smallest value in the set.
      * @throws IllegalArgumentException if the set is empty.
      */
-	public int smallest()  {
-		if (set.isEmpty()) throw new IllegalArgumentException("Set is empty");
-        return set.stream().min(Integer::compareTo).get();
-	};
+	public int smallest() throws IntegerSetException {
+	    if (set.isEmpty()) throw new IntegerSetException("Set is empty");
+	    return set.stream().min(Integer::compareTo).get();
+	}
 
 		
 	

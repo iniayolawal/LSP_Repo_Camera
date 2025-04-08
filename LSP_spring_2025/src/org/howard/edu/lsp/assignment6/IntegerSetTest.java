@@ -1,11 +1,16 @@
+/**
+ * *Name: Inioluwa Ayo-Lawal
+ */
 package org.howard.edu.lsp.assignment6;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+/**
+ * References
+ * https://junit.org/junit5/docs/current/user-guide/
+ * https://youtu.be/6uSnF6IuWIw?si=No3brq0bK11yx_jI
+ */
 
 public class IntegerSetTest {
 

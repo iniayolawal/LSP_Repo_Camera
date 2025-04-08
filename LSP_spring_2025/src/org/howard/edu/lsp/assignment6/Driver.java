@@ -5,7 +5,7 @@ package org.howard.edu.lsp.assignment6;
 
 public class Driver {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IntegerSetException {
         // Test 1: Creating IntegerSet and testing add(), toString(), length(), and contains().
         System.out.println("Test 1: Testing add(), toString(), length(), contains()");
         IntegerSet set1 = new IntegerSet();
