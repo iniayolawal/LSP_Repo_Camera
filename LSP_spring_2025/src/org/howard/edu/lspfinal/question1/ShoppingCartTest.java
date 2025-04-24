@@ -7,24 +7,46 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+/**
+ * This test class verifies the functionality of the {@link ShoppingCart} class.
+ * 
+ * It contains a series of unit tests designed to confirm that the core operations of
+ * the shopping cart—such as adding items, calculating totals, applying discounts,
+ * and handling invalid inputs—work correctly under a variety of conditions.
+ *
+ * Each test is annotated with @DisplayName for clear identification when tests are run.
+ */
 public class ShoppingCartTest {
-	@Test
-	@DisplayName('Test adding valid item')
-	public void testAddValidItem() {
-		ShoppingCart cart= new ShoppingCart();
-		cart.addItem("Apple", 1.99);
-		assertEquals(1.99, cart.getTotalCost(), 0.01);
+
+	/**
+     * Tests whether a valid item with a positive price is successfully added to the cart.
+     * Verifies that the total cost reflects the price of the added item.
+     */
+    @Test
+    @DisplayName("Test adding valid item")
+    public void testAddValidItem() {
+        ShoppingCart cart = new ShoppingCart();
+        cart.addItem("Apple", 1.99);
+        assertEquals(1.99, cart.getTotalCost(), 0.01);
 	}
 	
+    /**
+     * Tests the system’s behavior when attempting to add an item priced at zero.
+     * Since zero is not allowed, the test checks that an IllegalArgumentException is thrown.
+     */
+    @Test
+    @DisplayName("Test adding item with 0 price (expect exception)")
+    public void testAddItemZeroPrice() {
+        ShoppingCart cart = new ShoppingCart();
+        assertThrows(IllegalArgumentException.class, () -> cart.addItem("FreeItem", 0));
+    }
 	
-	@Test
-	@DisplayName("Test adding item with 0 price (expect exception)")
-	public void testAddItemZeroPric() {
-		ShoppingCart cart = new ShoppingCart();
-		assertThrows(IllegaArgumentException.class, () -> cart.addItem("FreeItem", 0));
-		
-	}
-	
+    
+    /**
+     * Ensures that the shopping cart rejects items with negative prices.
+     * The cart should raise an IllegalArgumentException when such input is provided.
+     */
+
 	@Test
 	@DisplayName("Test adding item with negative price (expect exception)")
 	public void testAddItemNegativePrice() {
@@ -33,6 +55,10 @@ public class ShoppingCartTest {
 		
 	}
 	
+	/**
+     * Tests that removing an item which exists in the cart successfully deletes it,
+     * and the total cost is updated accordingly.
+     */
 	@Test
 	@DisplayName("Test removing existing item")
 	public void testRemoveExistingItem() {
@@ -42,6 +68,10 @@ public class ShoppingCartTest {
 	    assertEquals(0.0, cart.getTotalCost(), 0.01);
 	}
 
+	 /**
+     * Tests that removing a non-existent item does not cause an error,
+     * and the cart remains unchanged.
+     */
 	@Test
 	@DisplayName("Test removing non-existent item")
 	public void testRemoveNonExistentItem() {
@@ -51,7 +81,10 @@ public class ShoppingCartTest {
 	    assertEquals(3.00, cart.getTotalCost(), 0.01);  // cost should be unaffected
 	}
 	
-	
+	/**
+     * Verifies that applying the "SAVE10" discount code correctly applies a 10% discount
+     * and updates the internal discount percentage.
+     */
 	@Test
 	@DisplayName("Test applying SAVE10")
 	public void testApplySave10() {
@@ -61,6 +94,10 @@ public class ShoppingCartTest {
 		
 	}
 	
+	/**
+     * Verifies that applying the "SAVE20" discount code correctly applies a 20% discount.
+     * This test ensures that the system recognizes the discount and adjusts calculations accordingly.
+     */
 	@Test
 	@DisplayName("Test applying SAVE20")
 	public void testApplySave20() {
@@ -69,6 +106,10 @@ public class ShoppingCartTest {
 		assertEquals(20.0, cart.getDiscountPercentage(), 0.01);
 	}
 	
+	/**
+     * Tests the system’s response to an invalid discount code.
+     * The cart should throw an exception when a code other than "SAVE10" or "SAVE20" is applied.
+     */
 	@Test
 	@DisplayName("Test applying invalid discount code (expect exception)")
 	public void TestApplyInvalidCode() {
@@ -76,6 +117,11 @@ public class ShoppingCartTest {
 		assertThrows(IllegalArgumentException.class, () -> cart.applyDiscountCode("SAVE50"));
 	}
 	
+	/**
+     * Verifies that the cart calculates the correct total cost when no discounts are applied.
+     * It sums up all item prices and returns the correct amount.
+     */
+
 	@Test
 	@DisplayName("Test total cost without discount")
 	public void testTotalCostNoDiscount() {
@@ -85,6 +131,10 @@ public class ShoppingCartTest {
 		assertEquals(6.0, cart.getTotalCost(), 0.01);
 	}
 	
+	 /**
+     * Confirms that the cart correctly calculates the total after applying a 10% discount.
+     * The test first adds multiple items, applies a discount code, and checks the final total.
+     */
 	@Test
 	@DisplayName("Test total cost with discount")
 	public void testTotalCostWithDiscount() {
@@ -96,6 +146,10 @@ public class ShoppingCartTest {
 	}
 	
 	
+	/**
+     * Ensures that when no items have been added to the cart,
+     * the total cost returned is 0.0, regardless of any applied discounts.
+     */
 	@Test
 	@DisplayName("Test total cost with empty cart")
 	public void testTotalCostEmptyCart() {

@@ -1,3 +1,5 @@
+package org.howard.edu.lspfinal.question1;
+
 import java.util.HashMap;
 import java.util.Map;
 
