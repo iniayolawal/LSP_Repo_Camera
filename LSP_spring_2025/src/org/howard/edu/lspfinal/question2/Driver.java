@@ -1,38 +1,46 @@
 package org.howard.edu.lspfinal.question2;
 
 /**
- * Driver class for testing the TaskManager system.
+ * Custom driver to demonstrate TaskManager functionality
+ * using original task names and scenarios.
  */
 public class Driver {
     public static void main(String[] args) {
         TaskManager manager = new TaskManager();
 
+        System.out.println("=== Adding Tasks ===");
         try {
-            manager.addTask("Fix Bug #204", 1, "TODO");
-            manager.addTask("Write Docs", 3, "TODO");
-            manager.addTask("Setup CI/CD", 2, "IN_PROGRESS");
-
-            // Duplicate task
-            manager.addTask("Fix Bug #204", 4, "DONE");
+            manager.addTask("Code Review", 2, "TODO");
+            manager.addTask("Design Meeting", 1, "IN_PROGRESS");
+            manager.addTask("Update Roadmap", 3, "TODO");
         } catch (DuplicateTaskException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Duplicate error: " + e.getMessage());
         }
 
+        System.out.println("\n=== Trying to Add Duplicate Task ===");
         try {
-            Task t = manager.getTaskByName("Write Docs");
-            System.out.println("Retrieved: " + t);
-        } catch (TaskNotFoundException e) {
-            System.out.println("Error: " + e.getMessage());
+            manager.addTask("Code Review", 5, "DONE");
+        } catch (DuplicateTaskException e) {
+            System.out.println("Duplicate error: " + e.getMessage());
         }
 
+        System.out.println("\n=== Retrieving a Task ===");
         try {
-            manager.updateStatus("Write Docs", "DONE");
-            manager.updateStatus("Nonexistent Task", "IN_PROGRESS");
+            Task task = manager.getTaskByName("Design Meeting");
+            System.out.println("Retrieved Task: " + task);
         } catch (TaskNotFoundException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Retrieval error: " + e.getMessage());
         }
 
-        // Print all tasks grouped by status
+        System.out.println("\n=== Updating Task Status ===");
+        try {
+            manager.updateStatus("Update Roadmap", "DONE");
+            manager.updateStatus("Nonexistent", "TODO");
+        } catch (TaskNotFoundException e) {
+            System.out.println("Update error: " + e.getMessage());
+        }
+
+        System.out.println("\n=== Printing All Tasks by Status ===");
         manager.printTasksGroupedByStatus();
     }
 }
