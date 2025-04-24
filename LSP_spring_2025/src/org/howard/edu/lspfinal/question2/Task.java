@@ -1,9 +1,8 @@
 package org.howard.edu.lspfinal.question2;
 
 /**
- * Represents a task in the TaskManager system.
- * Each task has a unique name, a numeric priority (lower = higher priority),
- * and a status ("TODO", "IN_PROGRESS", or "DONE").
+ * Represents a Task with a unique name, a priority value, and a status.
+ * Each task belongs to one of three statuses: "TODO", "IN_PROGRESS", or "DONE".
  */
 public class Task {
     private String name;
@@ -11,11 +10,11 @@ public class Task {
     private String status;
 
     /**
-     * Constructs a new task with the given name, priority, and status.
+     * Constructs a new Task object.
      *
-     * @param name the name of the task
-     * @param priority the priority of the task
-     * @param status the initial status of the task
+     * @param name     the unique name of the task
+     * @param priority the task's priority level (lower number = higher priority)
+     * @param status   the current status of the task
      */
     public Task(String name, int priority, String status) {
         this.name = name;
@@ -24,6 +23,8 @@ public class Task {
     }
 
     /**
+     * Gets the task's name.
+     *
      * @return the task name
      */
     public String getName() {
@@ -31,30 +32,36 @@ public class Task {
     }
 
     /**
-     * @return the priority of the task
+     * Gets the task's priority.
+     *
+     * @return the task priority
      */
     public int getPriority() {
         return priority;
     }
 
     /**
-     * @return the current status of the task
+     * Gets the current status of the task.
+     *
+     * @return the task status
      */
     public String getStatus() {
         return status;
     }
 
     /**
-     * Updates the task's status.
+     * Sets the status of the task.
      *
-     * @param status the new status to set
+     * @param status the new status to assign to the task
      */
     public void setStatus(String status) {
         this.status = status;
     }
 
     /**
-     * @return string representation of the task
+     * Returns a string representation of the task.
+     *
+     * @return string describing the task
      */
     @Override
     public String toString() {
