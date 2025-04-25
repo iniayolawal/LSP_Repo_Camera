@@ -1,3 +1,6 @@
+/**
+ * Name: Inioluwa Ayo-Lawal
+ */
 package org.howard.edu.lspfinal.question3;
 
 /**
