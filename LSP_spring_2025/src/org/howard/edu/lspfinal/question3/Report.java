@@ -1,5 +1,10 @@
 /**
  * Name: Inioluwa Ayo-Lawal
+ * 
+ * References:
+ * https://refactoring.guru/design-patterns/template-method
+ * https://stackoverflow.com/questions/19174535/when-to-use-template-method-pattern
+ * https://www.baeldung.com/java-template-method-pattern
  */
 package org.howard.edu.lspfinal.question3;
 

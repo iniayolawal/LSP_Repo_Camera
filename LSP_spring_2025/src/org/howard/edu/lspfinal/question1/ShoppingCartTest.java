@@ -1,5 +1,11 @@
 /*
  * Inioluwa Ayo-Lawal
+ * 
+ * 
+ * References:
+ * https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions
+ * https://www.baeldung.com/junit-5
+ * https://stackoverflow.com/questions/5889239/why-should-i-use-a-delta-when-comparing-floating-point-numbers
  * */
 package org.howard.edu.lspfinal.question1;
 

@@ -1,5 +1,9 @@
 /**
  * Name: Inioluwa Ayo-Lawal
+ * 
+ * Refernces:
+ * https://www.geeksforgeeks.org/java-util-hashmap-in-java/
+ * https://www.baeldung.com/java-new-custom-exception
  */
 package org.howard.edu.lspfinal.question2;
 

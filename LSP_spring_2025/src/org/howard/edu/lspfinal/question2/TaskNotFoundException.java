@@ -1,5 +1,9 @@
 /**
  * Name: Inioluwa Ayo-Lawal
+ * 
+ * References:
+ * https://docs.oracle.com/javase/tutorial/essential/exceptions/creating.html
+ * 
  */
 package org.howard.edu.lspfinal.question2;
 
